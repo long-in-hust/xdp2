@@ -90,3 +90,9 @@ src/config.mk
 src/include/arch
 src/test/**/test_*
 !src/test/**/test_*.*
+src/test/**/*
+!src/test/**/*.*
+!src/test/**/Makefile
+tools/**/*
+!tools/**/*.*
+!tools/**/Makefile
