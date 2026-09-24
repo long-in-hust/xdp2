@@ -82,7 +82,9 @@
 
 #define XDP2_CACHELINE_SIZE 64
 
+#if !defined(__KERNEL__) && !defined(__bpf__)
 #define XDP2_PAGE_SIZE (sysconf(_SC_PAGE_SIZE))
+#endif
 
 #define XDP2_STRING_IT(X) #X
 
@@ -169,10 +171,12 @@ static inline const void *xdp2_add_len_to_ptr_const(const void *p, size_t len)
 	return (void *)((__u8 *)p + len);
 }
 
+#if !defined(__KERNEL__) && !defined(__bpf__)
 static inline bool xdp2_offset_page_aligned(off_t offset)
 {
 	return (offset == (offset & ~(XDP2_PAGE_SIZE - 1)));
 }
+#endif
 
 static inline bool xdp2_is_power_of_two(unsigned long long x)
 {
@@ -225,10 +229,12 @@ static inline unsigned long xdp2_round_up(unsigned long x, unsigned int r)
 	return diff ? x + (r - diff) : x;
 }
 
+#if !defined(__KERNEL__) && !defined(__bpf__)
 static inline unsigned long xdp2_round_up_to_page(unsigned long x)
 {
 	return xdp2_round_up(x, XDP2_PAGE_SIZE);
 }
+#endif
 
 #define	__XDP2_LOG_1(n) (((n) >= 2ULL) ? 1 : 0)
 #define	__XDP2_LOG_2(n) (((n) >= 1ULL << 2) ?				\
