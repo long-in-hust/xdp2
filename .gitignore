@@ -79,3 +79,14 @@ install
 # generated code
 *.p.c
 **/*.p.c
+src/include/xdp2/_dtable.h
+src/include/xdp2/_stable.h
+src/include/xdp2/_pmacro_gen.h
+src/test/bitmaps/bitmap_funcs.h
+
+# post build artifacts
+platform
+src/config.mk
+src/include/arch
+src/test/**/test_*
+!src/test/**/test_*.*
