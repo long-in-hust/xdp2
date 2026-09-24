@@ -21,6 +21,7 @@ __pycache__/
 
 # Object files
 *.o
+**/*.o
 *.ko
 *.obj
 *.elf
@@ -74,3 +75,7 @@ dkms.conf
 
 # install directory when using nix
 install
+
+# generated code
+*.p.c
+**/*.p.c
