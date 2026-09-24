@@ -93,6 +93,7 @@ src/test/**/test_*
 src/test/**/*
 !src/test/**/*.*
 !src/test/**/Makefile
-tools/**/*
-!tools/**/*.*
-!tools/**/Makefile
+src/tools/**/*
+!src/tools/**/*.*
+!src/tools/**/Makefile
+thirdparty/cppfront/cppfront-compiler
